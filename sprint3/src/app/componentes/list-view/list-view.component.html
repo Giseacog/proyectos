@@ -1,0 +1,14 @@
+<div class="product-card">
+    <ul>
+        @for (product of products; track product.id_product)
+             {
+                <li>
+                    <img [src]="product.img" alt="">
+                    <h3>{{product.name}}</h3>
+                    <p>{{product.description}}</p>
+                    <p>{{product.price}}</p>
+                </li>
+
+             }
+    </ul>
+</div>
