@@ -4,13 +4,14 @@ import { Producto } from '../../models/productos';
 
 @Component({
   selector: 'app-list-view',
+  standalone: true,
   imports: [],
   templateUrl: './list-view.component.html',
   styleUrl: './list-view.component.css',
 })
 export class ListViewComponent {
-  cartItems:string[]=[];
-  total:number=0;
+  cartItems: string[] = [];
+  total: number = 0;
 
   products: Producto[] = [
     {
@@ -27,7 +28,7 @@ export class ListViewComponent {
       price: 12000,
       description:
         'Tablet con pantalla de 11 pulgadas, 128GB de almacenamiento y soporte para S Pen.',
-      img: '/img/Galaxy-Tab-S7.jpg',
+      img: '/Galaxy-Tab-S7.jpg',
     },
     {
       id_product: 3,
@@ -92,12 +93,9 @@ export class ListViewComponent {
         'Auriculares con cancelación de ruido activa y sonido de alta fidelidad.',
       img: '/Sony-WH.jpg',
     },
-  ]
+  ];
   //funcion (El hijo avisa que entraron a list)
-  onProductList(product:string):void{
+  productList(product: string): void {
     this.cartItems.push(product);
-
   }
-
-
 }

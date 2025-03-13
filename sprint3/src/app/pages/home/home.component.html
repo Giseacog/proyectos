@@ -1,1 +1,29 @@
-<p>home works!</p>
+<div class="home">
+  <app-navbar (toggleMenu)="onToggleMenu($event)"></app-navbar>
+  @if (showSideMenu){
+  <app-side></app-side>
+  }
+  <div class="container-main">
+    <ul class="container-buttons">
+      <li>
+        <button class="buttons" (click)="handleSelectView('list')">
+          <i class="fa-solid fa-list"></i>
+        </button>
+      </li>
+      <li>
+        <button class="buttons" (click)="handleSelectView('grid')">
+          <i class="fas fa-th-large"></i>
+        </button>
+      </li>
+    </ul>
+    <div class="content">
+      @if (selectedView === "grid"){
+      <app-grid-view></app-grid-view>
+
+      }@else {
+      <app-list-view></app-list-view>
+      }
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

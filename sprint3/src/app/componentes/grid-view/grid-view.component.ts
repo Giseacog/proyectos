@@ -12,6 +12,7 @@ export class GridViewComponent {
   @Input() productImg:string="";
 
   @Output() productList: EventEmitter<string>=new EventEmitter<string>();
+products: any;
   
   //metodo se manda llamar cada vez que den click
   viewList():void{

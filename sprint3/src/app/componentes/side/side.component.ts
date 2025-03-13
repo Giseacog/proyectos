@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './side.component.css'
 })
 export class SideComponent {
+
 
 }
