@@ -1,1 +1,16 @@
+<div class="product-card">
+  <div class="row">
+    @for (product of products; track product.id_product) {
+    <li class="card col-3">
+      <img [src]="product.img" alt="" />
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <div class="content-button d-flex justity-between align-items-center">
+        <p class="text-primary">{{ product.price }}</p>
+        <button class="btn btn-primary">Anadir a carrito</button>
+      </div>
+    </li>
 
+    }
+  </div>
+</div>

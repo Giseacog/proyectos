@@ -18,10 +18,10 @@
     </ul>
     <div class="content">
       @if (selectedView === "grid"){
-      <app-grid-view></app-grid-view>
+      <app-grid-view [products]="products"></app-grid-view>
 
       }@else {
-      <app-list-view></app-list-view>
+      <app-list-view [products]="products"></app-list-view>
       }
     </div>
   </div>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Producto } from '../../models/productos';
 
 @Component({
   selector: 'app-grid-view',
@@ -7,16 +8,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './grid-view.component.css'
 })
 export class GridViewComponent {
-  @Input() productName:string="";
-  @Input() productDescription:string=""
-  @Input() productImg:string="";
+ 
 
   @Output() productList: EventEmitter<string>=new EventEmitter<string>();
-products: any;
+  @Input() products: Producto[] =[] 
   
   //metodo se manda llamar cada vez que den click
   viewList():void{
-    this.productList.emit(this.productName)
+    this.productList.emit('')
   }
 
 }
