@@ -1,1 +1,13 @@
-<p>img-container works!</p>
+<div>
+  <ul>
+    @for (image of images; track image.id_image) {
+    <li>
+      <img [src]="image.src" [alt]="image.name" />
+      <h3>{{image.name}}</h3>
+      <button (click)="deleteImage(image.id_image)">borrar</button>
+      <button></button>
+    </li>
+
+    }
+  </ul>
+</div>

@@ -37,7 +37,7 @@ export class NewimageFormComponent {
     this.imageUrl = null;
     this.imageName = '';
   
-    $(`#${this.modalID}`).modal('hide');
+     $(`#${this.modalID}`).modal('hide'); 
   }
 
   loadImages() {

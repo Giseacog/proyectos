@@ -5,25 +5,25 @@ import { Image } from '../../../../models/image.model';
 import { EventEmitter } from '@angular/core';
 import { ImgService } from '../../../../services/img.service';
 
-
-
 @Component({
   selector: 'app-img-container',
   imports: [],
   templateUrl: './img-container.component.html',
   standalone: true,
-  styleUrl: './img-container.component.css'
+  styleUrl: './img-container.component.css',
 })
 export class ImgContainerComponent {
-  @Input() images!:Image[]
-  @Output() reloadImgs= new EventEmitter<void>();
+  @Input() images!: Image[];
+  @Output() reloadImgs = new EventEmitter<void>();
 
-  constructor(private imgService:ImgService){
+  constructor(private imgService: ImgService) {}
 
+  ngOnInit() {
+    console.log(this.images)
   }
-  deleteImage(id:number){
+
+  deleteImage(id: number) {
     this.imgService.deleteImageByID(id);
     this.reloadImgs.emit();
   }
-
 }
